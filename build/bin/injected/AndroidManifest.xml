@@ -3,7 +3,7 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.play4noobwin.p4browser"
 	android:versionCode="1"
-	android:versionName="1.0">
+	android:versionName="1.0.1">
 
 	<uses-sdk
 		android:minSdkVersion="14"
@@ -17,6 +17,9 @@
 
 	<uses-permission
 		android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+
+	<uses-permission
+		android:name="android.permission.WAKE_LOCK"/>
 
 	<application
 		android:allowBackup="true"

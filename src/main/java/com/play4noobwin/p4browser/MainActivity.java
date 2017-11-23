@@ -29,11 +29,12 @@ public class MainActivity extends Activity {
 	private Button button2;
 	private Button button3;
 	private Button button4;
-	private Button button5;
-	private Button button6;
+
+	private double stop = 0;
 
 
-
+	private Timer _timer = new Timer();
+	private TimerTask timer;
 
 
 	@Override
@@ -48,11 +49,11 @@ public class MainActivity extends Activity {
 		linear1 = (LinearLayout) findViewById(R.id.linear1);
 		webview1 = (WebView) findViewById(R.id.webview1);
 		webview1.getSettings().setJavaScriptEnabled(true);
-		webview1.getSettings().setSupportZoom(true);
+		webview1.getSettings().setBuiltInZoomControls(true);
 		webview1.setWebViewClient(new WebViewClient() {
 				@Override
 				public void onPageStarted(WebView _view,final String _url, Bitmap _favicon) {
-
+					edittext1.setText(_url);
 					super.onPageStarted(_view, _url, _favicon);
 				}
 				@Override
@@ -66,8 +67,7 @@ public class MainActivity extends Activity {
 		button2 = (Button) findViewById(R.id.button2);
 		button3 = (Button) findViewById(R.id.button3);
 		button4 = (Button) findViewById(R.id.button4);
-		button5 = (Button) findViewById(R.id.button5);
-		button6 = (Button) findViewById(R.id.button6);
+
 
 
 		button1.setOnClickListener(new View.OnClickListener() {
@@ -104,18 +104,7 @@ public class MainActivity extends Activity {
 					webview1.goForward();
 				}
 			});
-		button5.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View _v) { 
-					webview1.zoomOut();
-				}
-			});
-		button6.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View _v) { 
-					webview1.zoomIn();
-				}
-			});
+
 
 	}
 
@@ -123,6 +112,35 @@ public class MainActivity extends Activity {
 		webview1.loadUrl("https://www.google.com");
 	}
 
+	@Override
+	public void onBackPressed() {
+		if (webview1.canGoBack()) {
+			webview1.goBack();
+		}
+		else {
+			if (stop == 0) {
+				showMessage("Click again to exit");
+				stop++;
+				timer = new TimerTask() {
+					@Override
+					public void run() {
+						runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+									stop--;
+								}
+							});
+					}
+				};
+				_timer.schedule(timer, (int)(1500));
+			}
+			else {
+				if (stop == 1) {
+					finish();
+				}
+			}
+		}
+	}
 
 
 

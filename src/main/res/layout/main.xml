@@ -7,28 +7,29 @@
 	<LinearLayout
 		android:id="@+id/linear1"
 		android:layout_width="match_parent"
-		android:layout_height="42dp"
+		android:layout_height="45dp"
 		android:padding="8dp"
 		android:background="#FFFFFF"
 		android:orientation="horizontal"
 		android:gravity="right"
+		android:layout_gravity="right"
 	>
 		<EditText
 			android:id="@+id/edittext1"
-			android:layout_width="280dp"
-			android:layout_height="30dp"
+			android:layout_width="match_parent"
+			android:layout_height="32dp"
 			android:padding="8dp"
-			android:gravity="left"
-			android:text="www.google.com"
+			android:gravity="center_horizontal|center_vertical"
 			android:textSize="14sp"
 			android:textColor="#000000"
 			android:hint="www.google.com"
 			android:textColorHint="#607D8B"
+			android:singleLine="true"
 		/>
 		<Button
 			android:id="@+id/button1"
-			android:layout_width="25dp"
-			android:layout_height="25dp"
+			android:layout_width="27dp"
+			android:layout_height="27dp"
 			android:padding="8dp"
 			android:background="@drawable/ic_search_black"
 			android:textSize="12sp"
@@ -36,8 +37,8 @@
 		/>
 		<Button
 			android:id="@+id/button2"
-			android:layout_width="25dp"
-			android:layout_height="25dp"
+			android:layout_width="27dp"
+			android:layout_height="27dp"
 			android:padding="8dp"
 			android:background="@drawable/ic_details_black"
 			android:textSize="12sp"
@@ -45,8 +46,8 @@
 		/>
 		<Button
 			android:id="@+id/button3"
-			android:layout_width="25dp"
-			android:layout_height="25dp"
+			android:layout_width="27dp"
+			android:layout_height="27dp"
 			android:padding="8dp"
 			android:background="@drawable/ic_arrow_back_black"
 			android:textSize="12sp"
@@ -54,28 +55,10 @@
 		/>
 		<Button
 			android:id="@+id/button4"
-			android:layout_width="25dp"
-			android:layout_height="25dp"
+			android:layout_width="27dp"
+			android:layout_height="27dp"
 			android:padding="8dp"
 			android:background="@drawable/ic_arrow_forward_black"
-			android:textSize="12sp"
-			android:textColor="#000000"
-		/>
-		<Button
-			android:id="@+id/button5"
-			android:layout_width="27dp"
-			android:layout_height="27dp"
-			android:padding="8dp"
-			android:background="@drawable/ic_unfold_less_black"
-			android:textSize="12sp"
-			android:textColor="#000000"
-		/>
-		<Button
-			android:id="@+id/button6"
-			android:layout_width="27dp"
-			android:layout_height="27dp"
-			android:padding="8dp"
-			android:background="@drawable/ic_unfold_more_black"
 			android:textSize="12sp"
 			android:textColor="#000000"
 		/>
