@@ -35,32 +35,217 @@
 			android:textSize="12sp"
 			android:textColor="#000000"
 		/>
-		<Button
-			android:id="@+id/button2"
-			android:layout_width="27dp"
-			android:layout_height="27dp"
+		<Spinner
+			android:id="@+id/spinner1"
+			android:layout_width="35dp"
+			android:layout_height="35dp"
 			android:padding="8dp"
-			android:background="@drawable/ic_details_black"
+			android:background="@drawable/ic_more_vert_black"
+			android:spinnerMode="dropdown"
+		/>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/linear2"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:padding="8dp"
+		android:orientation="vertical"
+		android:layout_weight="1"
+	>
+		<LinearLayout
+			android:id="@+id/linearstg1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:orientation="horizontal"
+		>
+			<Button
+				android:id="@+id/backwv"
+				android:layout_width="35dp"
+				android:layout_height="35dp"
+				android:padding="8dp"
+				android:background="@drawable/ic_chevron_left_black"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+			<TextView
+				android:id="@+id/settingstext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:gravity="center_horizontal"
+				android:text="Settings"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/generaltext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal"
+			android:text="General"
 			android:textSize="12sp"
 			android:textColor="#000000"
 		/>
-		<Button
-			android:id="@+id/button3"
-			android:layout_width="27dp"
-			android:layout_height="27dp"
+		<LinearLayout
+			android:id="@+id/linearstg2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:padding="8dp"
-			android:background="@drawable/ic_arrow_back_black"
+			android:orientation="horizontal"
+		>
+			<TextView
+				android:id="@+id/cachetext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Cache"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+			<Button
+				android:id="@+id/cleancachebutton"
+				android:layout_width="80dp"
+				android:layout_height="35dp"
+				android:layout_marginLeft="270dp"
+				android:padding="8dp"
+				android:text="(CLEAN)"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+		</LinearLayout>
+		<LinearLayout
+			android:id="@+id/linearstg3"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:orientation="horizontal"
+		>
+			<TextView
+				android:id="@+id/desktoptext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Desktop Mode"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+			<Button
+				android:id="@+id/desktoponoff"
+				android:layout_width="50dp"
+				android:layout_height="35dp"
+				android:layout_marginLeft="255dp"
+				android:padding="8dp"
+				android:text="(OFF)"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/betatext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal"
+			android:text="Beta"
 			android:textSize="12sp"
 			android:textColor="#000000"
 		/>
-		<Button
-			android:id="@+id/button4"
-			android:layout_width="27dp"
-			android:layout_height="27dp"
+		<LinearLayout
+			android:id="@+id/linearstg4"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:padding="8dp"
-			android:background="@drawable/ic_arrow_forward_black"
+			android:orientation="horizontal"
+		>
+			<TextView
+				android:id="@+id/themetext"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:text="Theme"
+				android:textSize="12sp"
+				android:textColor="#000000"
+			/>
+			<Spinner
+				android:id="@+id/theme"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:padding="8dp"
+				android:spinnerMode="dropdown"
+			/>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/anothertext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal"
+			android:text="Another"
 			android:textSize="12sp"
 			android:textColor="#000000"
+		/>
+		<ImageView
+			android:id="@+id/imageview1"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:src="@drawable/app_icon"
+			android:scaleType="fitXY"
+			android:layout_gravity="center_horizontal"
+		/>
+		<TextView
+			android:id="@+id/infotext1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:gravity="center_horizontal"
+			android:text="P4Browser is based in WebView"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:lines="1"
+			android:layout_gravity="center_horizontal"
+		/>
+		<TextView
+			android:id="@+id/infotext2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="-Version 1.0.2"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal"
+		/>
+		<TextView
+			android:id="@+id/infotext3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="-Open Source"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal"
+		/>
+		<TextView
+			android:id="@+id/infotext4"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="-Small"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal"
+		/>
+		<Button
+			android:id="@+id/githubsource"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:text="Source Code"
+			android:textSize="12sp"
+			android:textColor="#000000"
+			android:layout_gravity="center_horizontal"
 		/>
 	</LinearLayout>
 	<WebView
