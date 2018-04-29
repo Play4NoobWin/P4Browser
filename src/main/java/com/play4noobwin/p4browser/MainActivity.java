@@ -248,18 +248,24 @@ public class MainActivity extends Activity {
 	private void  initializeLogic() {
 		webview1.loadUrl("https://www.google.com");
 		webview1.setDownloadListener(new DownloadListener() {
+            @Override public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
 
-public void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-
-Intent intent = new Intent("android.intent.action.VIEW");
-
-intent.setData(Uri.parse(str));
-
-MainActivity.this.startActivity(intent);
-
-}
-
-});
+                DownloadManager.Request request = new DownloadManager.Request( Uri.parse(url));
+                request.setMimeType(mimeType);
+                String cookies = CookieManager.getInstance().getCookie(url);
+                request.addRequestHeader("cookie", cookies);
+                request.addRequestHeader("User-Agent", userAgent);
+                request.setDescription("Downloading file...");
+                request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType));
+                request.allowScanningByMediaScanner();
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                request.setDestinationInExternalPublicDir( Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName( url, contentDisposition, mimeType));
+                DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(request);
+                Toast.makeText(getApplicationContext(), "Downloading File", Toast.LENGTH_LONG).show();
+            }
+        });
+		
 		linear2.setVisibility(View.GONE);
 		list.add("...");
 		list.add("Next");
